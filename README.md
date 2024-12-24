@@ -33,15 +33,20 @@ The dataset includes various credit card usage and demographic information. Key 
 - Handled missing values using the mean for numerical columns:
 
 df['NumberOfDependents'] = df['NumberOfDependents'].fillna(df['NumberOfDependents'].mean())
+
 df['MonthlyIncome'] = df['MonthlyIncome'].fillna(df['MonthlyIncome'].mean())
 
 * Identified and treated outliers using the Interquartile Range (IQR) method:
 
 
 Q1 = df.quantile(0.25)
+
 Q3 = df.quantile(0.75)
+
 IQR = Q3 - Q1
+
 outliers = ((df < (Q1 - 1.5 * IQR)) | (df > (Q3 + 1.5 * IQR)))
+
 ### Data Analysis and Visualization
 - Visualization Tools Used: Power BI
 
